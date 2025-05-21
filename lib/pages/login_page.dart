@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:touch_chat/components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -29,7 +30,7 @@ class LoginPage extends StatelessWidget {
 
           const SizedBox(height: 25),
 
-          TextField(),
+          MyTextfield(),
         ],
       ),
     );
