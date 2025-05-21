@@ -5,6 +5,33 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Theme.of(context).colorScheme.background);
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.message,
+            size: 60,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+
+          const SizedBox(height: 50),
+
+          Text(
+            "Touch Chat",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+
+          const SizedBox(height: 25),
+
+          TextField(),
+        ],
+      ),
+    );
   }
 }
