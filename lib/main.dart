@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:touch_chat/pages/login_page.dart';
+import 'package:touch_chat/pages/register_page.dart';
 import 'package:touch_chat/themes/light_mode.dart';
 
 void main() {
@@ -16,6 +17,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightMode,
       home: LoginPage(),
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
+      },
     );
   }
 }

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:touch_chat/components/my_button.dart';
 import 'package:touch_chat/components/my_textfield.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
-  LoginPage({super.key});
+  RegisterPage({super.key});
 
-  void login() {}
+  void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +47,17 @@ class LoginPage extends StatelessWidget {
             controller: _passwordController,
           ),
 
+          const SizedBox(height: 10),
+
+          MyTextfield(
+            hintText: "Confirm Password",
+            obscureText: true,
+            controller: _confirmPasswordController,
+          ),
+
           const SizedBox(height: 25),
 
-          MyButton(text: "Login", onTap: login),
+          MyButton(text: "Register", onTap: register),
 
           const SizedBox(height: 25),
 
@@ -56,15 +65,15 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Not a member? ",
+                "Already a member? ",
                 style: TextStyle(color: Theme.of(context).colorScheme.primary),
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/register');
+                  Navigator.pushNamed(context, '/login');
                 },
                 child: Text(
-                  "Register now",
+                  "Login now",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.primary,
