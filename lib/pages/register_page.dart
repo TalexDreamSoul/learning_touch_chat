@@ -7,7 +7,9 @@ class RegisterPage extends StatelessWidget {
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
-  RegisterPage({super.key});
+  final void Function()? onToggle;
+
+  RegisterPage({super.key, required this.onToggle});
 
   void register() {}
 
@@ -69,9 +71,7 @@ class RegisterPage extends StatelessWidget {
                 style: TextStyle(color: Theme.of(context).colorScheme.primary),
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/login');
-                },
+                onTap: onToggle,
                 child: Text(
                   "Login now",
                   style: TextStyle(
